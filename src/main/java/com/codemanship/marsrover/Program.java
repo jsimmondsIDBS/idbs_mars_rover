@@ -26,6 +26,9 @@ public class Program {
                 if (userInput.equals("R")) {
                     rover.turn("R");
                 }
+                if (userInput.equals("X")) {
+                    System.exit(0);
+                }
             }
         }
 
