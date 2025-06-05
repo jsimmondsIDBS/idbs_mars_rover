@@ -22,6 +22,10 @@ public class Program {
                 if (userInput.equals("Q")) {
                     System.out.println(rover.getCurrentState());
                 }
+
+                if (userInput.equals("R")) {
+                    rover.turn("R");
+                }
             }
         }
 
