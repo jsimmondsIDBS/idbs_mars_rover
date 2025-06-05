@@ -11,9 +11,10 @@ public class Program {
         System.out.println("Enter target coordinates and direction: ");
 
         if (sc.hasNext()) {
-            String s = sc.nextLine();
+            String userInput = sc.nextLine();
 
-            System.out.println("Got from console: " + s);
+            Rover rover = new Rover(userInput);
+            System.out.println(rover.getInitialState());
 
         }
     }
