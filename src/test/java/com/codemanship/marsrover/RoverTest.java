@@ -11,12 +11,12 @@ public class RoverTest
     void roverIsDroppedOnInitialLocation()
     {
         Rover rover = new Rover(5, 6, Direction.North);
-        assertRoverLocationAndDirection(rover, 5, 6, Direction.North);
+
+        assertEquals("The rover has been dropped at coordinates (5,6) facing North", rover.getInitialState());
     }
 
 
-    private static void assertRoverLocationAndDirection(Rover rover, int expectedX,
-                                                        int expectedY, Direction expectedDirection)
+    private static void assertRoverLocationAndDirection(Rover rover, int expectedX, int expectedY, Direction expectedDirection)
     {
         assertEquals(expectedX, rover.getX());
         assertEquals(expectedY, rover.getY());
