@@ -61,6 +61,20 @@ public class RoverTest
         assertRoverLocationAndDirection(rover, 5,6, Direction.W);
     }
 
+    @Test
+    void roverLeftTurnFullCircleFromInitialPosition()
+    {
+        Rover rover = new Rover(5,6,Direction.N);
+        rover.turn("L");
+        assertRoverLocationAndDirection(rover, 5, 6, Direction.W);
+        rover.turn("L");
+        assertRoverLocationAndDirection(rover, 5, 6, Direction.S);
+        rover.turn("L");
+        assertRoverLocationAndDirection(rover, 5,6,Direction.E);
+        rover.turn("L");
+        assertRoverLocationAndDirection(rover, 5,6, Direction.N);
+    }
+
     private static void assertRoverLocationAndDirection(Rover rover, int expectedX, int expectedY, Direction expectedDirection)
     {
         assertEquals(expectedX, rover.getX());
