@@ -15,6 +15,14 @@ public class RoverTest
         assertEquals("The rover has been dropped at coordinates (5,6) facing North", rover.getInitialState());
     }
 
+    @Test
+    void roverIsDroppedOnCustomLocation()
+    {
+        Rover rover = new Rover(2, 3, Direction.South);
+
+        assertEquals("The rover has been dropped at coordinates (2,3) facing South", rover.getInitialState());
+    }
+
 
     private static void assertRoverLocationAndDirection(Rover rover, int expectedX, int expectedY, Direction expectedDirection)
     {

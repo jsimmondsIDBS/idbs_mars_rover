@@ -30,6 +30,6 @@ public class Rover
 
     public String getInitialState()
     {
-        return "The rover has been dropped at coordinates (5,6) facing North";
+        return "The rover has been dropped at coordinates (" + x + "," + y + ") facing " + direction;
     }
 }
