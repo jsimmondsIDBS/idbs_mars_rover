@@ -57,4 +57,9 @@ public class Rover
             direction = com.codemanship.marsrover.Direction.E;
         }
     }
+
+    public String getCurrentState()
+    {
+        return "The rover is at (" + x + "," + y + ") facing " + direction.getName();
+    }
 }

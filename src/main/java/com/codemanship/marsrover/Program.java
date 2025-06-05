@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Program {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
+        Rover rover;
 
         System.out.println("Welcome to the Mars Rover!");
         System.out.println("Enter target coordinates and direction: ");
@@ -13,13 +13,18 @@ public class Program {
         if (sc.hasNext()) {
             String userInput = sc.nextLine();
 
-            Rover rover = new Rover(userInput);
+            rover = new Rover(userInput);
             System.out.println(rover.getInitialState());
+
+            while (sc.hasNext()) {
+                userInput = sc.nextLine();
+
+                if (userInput.equals("Q")) {
+                    System.out.println(rover.getCurrentState());
+                }
+            }
         }
 
-        while (sc.hasNext()) {
-            String userInput = sc.nextLine();
-            System.out.println("Entered: " + userInput);
-        }
+
     }
 }
