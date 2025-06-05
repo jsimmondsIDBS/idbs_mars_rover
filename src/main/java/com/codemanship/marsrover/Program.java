@@ -15,7 +15,11 @@ public class Program {
 
             Rover rover = new Rover(userInput);
             System.out.println(rover.getInitialState());
+        }
 
+        while (sc.hasNext()) {
+            String userInput = sc.nextLine();
+            System.out.println("Entered: " + userInput);
         }
     }
 }
