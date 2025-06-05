@@ -47,7 +47,30 @@ public class Rover
         {
             turnRight();
         }
+        else if (turnDirection.equals("L"))
+        {
+            turnLeft();
+        }
 
+    }
+
+    private void turnLeft()
+    {
+        if(direction == Direction.N)
+        {
+            direction = Direction.W;
+        } else if(direction == Direction.W)
+        {
+            direction = Direction.S;
+        }
+        else if (direction == Direction.S)
+        {
+            direction = Direction.E;
+        }
+        else if (direction == Direction.E)
+        {
+            direction = Direction.N;
+        }
     }
 
     private void turnRight()
