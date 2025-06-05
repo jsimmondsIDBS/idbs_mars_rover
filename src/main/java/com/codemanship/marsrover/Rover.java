@@ -13,6 +13,14 @@ public class Rover
         this.direction = direction;
     }
 
+    public Rover(String userInput)
+    {
+        String[] split = userInput.trim().split(",");
+        x = Integer.parseInt(split[0]);
+        y = Integer.parseInt(split[1]);
+        direction = Direction.valueOf(split[2]);
+    }
+
     public int getX()
     {
         return x;
@@ -30,7 +38,7 @@ public class Rover
 
     public String getInitialState()
     {
-        return "The rover has been dropped at coordinates (" + x + "," + y + ") facing " + direction;
+        return "The rover has been dropped at coordinates (" + x + "," + y + ") facing " + direction.getName();
     }
 
     public void turn(String turnDirection)
@@ -44,9 +52,9 @@ public class Rover
 
     private void turnRight()
     {
-        if(direction == Direction.North)
+        if(direction == Direction.N)
         {
-            direction = com.codemanship.marsrover.Direction.East;
+            direction = com.codemanship.marsrover.Direction.E;
         }
     }
 }
