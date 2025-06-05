@@ -10,7 +10,7 @@ public class RoverTest
     @Test
     void roverIsDroppedOnInitialLocation()
     {
-        Rover rover = new Rover(5, 6, Direction.North);
+        Rover rover = new Rover(5, 6, Direction.N);
 
         assertEquals("The rover has been dropped at coordinates (5,6) facing North", rover.getInitialState());
     }
@@ -18,7 +18,7 @@ public class RoverTest
     @Test
     void roverIsDroppedOnCustomLocation()
     {
-        Rover rover = new Rover(2, 3, Direction.South);
+        Rover rover = new Rover(2, 3, Direction.S);
 
         assertEquals("The rover has been dropped at coordinates (2,3) facing South", rover.getInitialState());
     }
@@ -26,31 +26,31 @@ public class RoverTest
     @Test
     void roverRightTurnFromInitialLocation()
     {
-        Rover rover = new Rover(5, 6, Direction.North);
+        Rover rover = new Rover(5, 6, Direction.N);
         rover.turn("R");
-        assertRoverLocationAndDirection(rover, 5, 6, Direction.East);
+        assertRoverLocationAndDirection(rover, 5, 6, Direction.E);
     }
 
     @Test
     void roverRightTurnFromEast()
     {
-        Rover rover = new Rover(5,6, Direction.East);
+        Rover rover = new Rover(5,6, Direction.E);
         rover.turn("R");
-        assertRoverLocationAndDirection(rover, 5,6, Direction.South);
+        assertRoverLocationAndDirection(rover, 5,6, Direction.S);
     }
 
     @Test
     void roverRightTurnFullCircleFromInitialPosition()
     {
-        Rover rover = new Rover(5,6,Direction.North);
+        Rover rover = new Rover(5,6,Direction.N);
         rover.turn("R");
-        assertRoverLocationAndDirection(rover, 5, 6, Direction.East);
+        assertRoverLocationAndDirection(rover, 5, 6, Direction.E);
         rover.turn("R");
-        assertRoverLocationAndDirection(rover, 5, 6, Direction.South);
+        assertRoverLocationAndDirection(rover, 5, 6, Direction.S);
         rover.turn("R");
-        assertRoverLocationAndDirection(rover, 5,6,Direction.West);
+        assertRoverLocationAndDirection(rover, 5,6,Direction.W);
         rover.turn("R");
-        assertRoverLocationAndDirection(rover, 5,6, Direction.North);
+        assertRoverLocationAndDirection(rover, 5,6, Direction.N);
     }
 
 
@@ -61,6 +61,21 @@ public class RoverTest
         assertEquals(expectedDirection, rover.getDirection());
     }
 
+    @Test
+    void roverIsDroppedOnInitialLocationFromStringWest()
+    {
+        Rover rover = new Rover("5,6,W");
+
+        assertEquals("The rover has been dropped at coordinates (5,6) facing West", rover.getInitialState());
+    }
+
+    @Test
+    void roverIsDroppedOnInitialLocationFromStringEast()
+    {
+        Rover rover = new Rover("5,6,E");
+
+        assertEquals("The rover has been dropped at coordinates (5,6) facing East", rover.getInitialState());
+    }
 
 
 
