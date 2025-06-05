@@ -32,4 +32,21 @@ public class Rover
     {
         return "The rover has been dropped at coordinates (" + x + "," + y + ") facing " + direction;
     }
+
+    public void turn(String turnDirection)
+    {
+        if(turnDirection.equals("R"))
+        {
+            turnRight();
+        }
+
+    }
+
+    private void turnRight()
+    {
+        if(direction == Direction.North)
+        {
+            direction = com.codemanship.marsrover.Direction.East;
+        }
+    }
 }
