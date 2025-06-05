@@ -67,4 +67,9 @@ public class Rover
             direction = Direction.N;
         }
     }
+
+    public String getCurrentState()
+    {
+        return "The rover is at (" + x + "," + y + ") facing " + direction.getName();
+    }
 }

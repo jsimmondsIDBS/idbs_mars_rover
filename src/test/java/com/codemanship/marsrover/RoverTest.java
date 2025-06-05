@@ -78,5 +78,12 @@ public class RoverTest
     }
 
 
+    @Test
+    void currentRoverState() {
+        Rover rover = new Rover(5, 6, Direction.E);
+
+        assertEquals("The rover is at (5,6) facing East", rover.getCurrentState());
+    }
+
 
 }
