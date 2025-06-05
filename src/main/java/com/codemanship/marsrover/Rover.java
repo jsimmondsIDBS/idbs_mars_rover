@@ -47,6 +47,16 @@ public class Rover
         if(direction == Direction.North)
         {
             direction = com.codemanship.marsrover.Direction.East;
+        } else if (direction == Direction.East)
+        {
+            direction = Direction.South;
+        }
+        else if (direction == Direction.South)
+        {
+            direction = Direction.West;
+        } else if (direction == Direction.West)
+        {
+            direction = Direction.North;
         }
     }
 }
